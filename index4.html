@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- create a function to add new rows to table-->
+    <table id="newTable" border="1">
+      <tr>
+        <td>First Row First Cell</td>
+        <td>First Row Second Cell</td>
+      </tr>
+      <tr>
+        <td>Second Row First Cell</td>
+        <td>Second Row Second Cell</td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    <input type="button" onclick="insertRow()" value="insert row" />
+    <script>
+      function insertRow() {
+        let table = document
+          .getElementById("newTable")
+          .appendChild(document.createElement("tr"));
+        table
+          .appendChild(document.createElement("td"))
+          .appendChild(document.createTextNode("new cell"));
+        table
+          .appendChild(document.createElement("td"))
+          .appendChild(document.createTextNode("new cell"));
+      }
+    </script>
+  </body>
+</html>

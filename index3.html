@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- //Assignment 3 
+    Print All  values entered for input box
+    -->
+    <form id="form1">
+      First Name :
+      <input
+        type="text"
+        name="firstName"
+        id="fname"
+        value="Pooja"
+      /><br /><br />
+      Second Name :
+      <input type="text" name="firstName" id="lname" value="Ruhi" />
+    </form>
+    <br />
+    <br />
+    <input type="button" onclick="printValue()" value="Print value" /><br />
+    <br />
+    <p id="displayValue"></p>
+
+    <script>
+      function printValue() {
+        let value = document.getElementById("displayValue");
+        let firstName = document.getElementById("fname").value;
+        let secondName = document.getElementById("lname").value;
+        value.innerHTML = firstName + "  " + secondName;
+
+        console.log(value);
+      }
+    </script>
+  </body>
+</html>

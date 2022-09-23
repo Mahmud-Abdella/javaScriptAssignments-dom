@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM-Assignment</title>
+    <style>
+      .main {
+        background-color: blue;
+        width: 50%;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"></div>
+    <section id="container">
+      <ul id="unordered">
+        <li class="first">One</li>
+        <li class="second">Two</li>
+        <li class="third">Three</li>
+      </ul>
+      <ol class="orderedList">
+        <li class="first">One</li>
+        <li class="second">Two</li>
+        <li class="third">three</li>
+      </ol>
+    </section>
+    <div class="footer"></div>
+
+    <script>
+      // 1.Select the section with id container using all possible id related methods
+      let sec0 = document.getElementById("container");
+      const sec1 = document.querySelector("#container");
+      
+      //2. Select all of the list items with a class of 'second'
+      let selectByClass = document.getElementsByClassName("second");
+      console.log(selectByClass);
+      selectByClass = document.querySelector(".second");
+      
+      //3. Select list items of class 'third' inside ol tag
+      let olist = document.querySelector(".orderedList");
+      let thirdItem = olist.querySelector(".third");
+     
+
+      //4.Give the section with id 'container' the text 'Hi from container'
+      let createPara = document.createElement("p");
+      let addText = document.createTextNode("Hi from container");
+      createPara.appendChild(addText);
+      document.getElementById("container").appendChild(createPara);
+
+      //5.Add the 'main' class to the div with class footer
+      let addClass = document.getElementsByClassName("footer")[0];
+      addClass.classList.add("main");
+
+      // 6.Remove the class main on the div with class footer
+      let removeClass = document.getElementsByClassName("footer")[0];
+      removeClass.classList.remove("main");
+
+      //7.Create new li element, with class and text 'four' and append it to ul tag
+      const myList = document.getElementsByTagName("ul")[0];
+      const addList = document.createElement("li");
+      addList.innerHTML = "four";
+      addList.classList.add("four");
+      myList.appendChild(addList);
+
+      //8.Provide background color to all the li elemenst inside the ol tag
+      const backColor = document.getElementsByTagName("ol")[0];
+      for (let i = 0; i < backColor.children.length; i++) {
+        backColor.children[i].style.backgroundColor = "green";
+      }
+      // 9.Remove the div with a class of footer -->
+      const divRemove = document.querySelector(".footer");
+        divRemove.remove();
+    </script>
+  </body>
+</html>
