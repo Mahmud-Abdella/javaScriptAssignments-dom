@@ -24,7 +24,7 @@
       <ol class="orderedList">
         <li class="first">One</li>
         <li class="second">Two</li>
-        <li class="third">three</li>
+        <li class="third">Three</li>
       </ol>
     </section>
     <div class="footer"></div>
@@ -33,21 +33,19 @@
       // 1.Select the section with id container using all possible id related methods
       let sec0 = document.getElementById("container");
       const sec1 = document.querySelector("#container");
-      
+
       //2. Select all of the list items with a class of 'second'
       let selectByClass = document.getElementsByClassName("second");
       console.log(selectByClass);
       selectByClass = document.querySelector(".second");
-      
+
       //3. Select list items of class 'third' inside ol tag
       let olist = document.querySelector(".orderedList");
-      let thirdItem = olist.querySelector(".third");
-     
-
+      let thirdItem = olist.querySelector(" ol .third");
+      
       //4.Give the section with id 'container' the text 'Hi from container'
       let createPara = document.createElement("p");
-      let addText = document.createTextNode("Hi from container");
-      createPara.appendChild(addText);
+      createPara.innerText = "Hi from container";
       document.getElementById("container").appendChild(createPara);
 
       //5.Add the 'main' class to the div with class footer
@@ -72,7 +70,8 @@
       }
       // 9.Remove the div with a class of footer -->
       const divRemove = document.querySelector(".footer");
-        divRemove.remove();
+      divRemove.remove();
+      
     </script>
   </body>
 </html>
